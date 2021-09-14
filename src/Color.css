@@ -1,0 +1,131 @@
+.div-color {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    left: 20;
+    justify-content: center;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #282c34;
+    color: white;
+    height: 25%;
+    width: 35%;
+    font-weight: 600;
+    font-size: calc(10px + 4vmin);
+    
+}
+
+label {
+    color: #282c34;
+    font-weight: 600;
+    font-size: 200%;
+    font-weight: 900;
+    width: 100%;
+    
+}
+
+input {
+    margin-top: 10px;
+    height: 10vh;
+    width: 20%;
+    font-size: 200%;
+    font-weight: 400;
+    border: 5px solid;
+    border-color: #282c34;
+    width: 100%;
+}
+
+select {
+    color: #282c34;
+    font-weight: 400;
+    font-size: 200%;
+    margin-top: 10px;
+    height: 10vh;
+    width: 100%;
+    border: 5px solid;
+    border-color: #282c34;
+}
+
+option:hover {
+    opacity: 50%;
+}
+
+#black {
+    color: #fff;
+    background: black;
+
+}
+
+
+#red {
+    color: #fff;
+    background-color: red;
+
+}
+
+
+#white {
+    
+    background-color: white;
+
+}
+
+.display {
+   margin-top: 5%;
+   margin-left: 5%;
+    height: 20vh;
+    width: 50%;
+    font-size: 100%;
+    font-weight: 400;
+    color: #fff;
+    background-color: #282c34;
+}
+
+
+ @media all and (max-width: 720px) {
+     .div-color {
+    position: relative;
+    height: max-content;
+    width: auto;
+    left: 20;
+    align-items: center;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #282c34;
+    color: white;
+    height: 5%;
+    width: auto;
+    font-weight: 500;
+    font-size: calc(10px + 4vmin);
+}
+
+label {
+    color: #282c34;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+input {
+    color: #282c34;
+    margin-top: 10px;
+    height: max-content;
+    width: max-content;
+    font-size: 100%;
+    font-weight: 600;
+}
+
+select {
+    color: #282c34;
+    font-weight: 300;
+    font-size: 100%;
+    margin-top: 10px;
+    height: max-content;
+    width: max-content;
+}
+}
