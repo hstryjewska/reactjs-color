@@ -23,6 +23,8 @@ const Color = () => {
         setColorValue(e.target.value)
     }
 
+    
+
     return (
         <div className="div-color">
             <form className='form-color'>
@@ -43,7 +45,7 @@ const Color = () => {
                 } }>Wyślij</button>
 
             </form>
-            <div className="display"><h4>WYNIK</h4>{ displayName } {displaySurname} wybrał/a kolor { displayColor }</div>
+            <div className="display"><h4>WYNIK</h4>{ displayName.length>0 && <h5>{ displayName} {displaySurname} wybrał/a kolor {displayColor}</h5>} </div>
 
         </div>
     )
