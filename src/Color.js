@@ -1,45 +1,54 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Color.css'
 
 const Color = () => {
-const [displayName, displayColor ] = useState(null);
+    const [displayName, setDisplayName] = useState('');
+    const [displaySurname, setDisplaySurname]= useState('');
+    const [displayColor, setDisplayColor] = useState('');
+    const [nameInputValue, setNameInputValue] = useState('');
+    const [surnameInputValue, setSurnameInputValue] = useState('');
+    const [colorValue, setColorValue] = useState('');
 
-    let fieldName;
-    
+
     const onChange = e => {
-        fieldName = e.target.value;
-        
+        setNameInputValue(e.target.value)
     }
 
-    let fieldColor;
+    const onSurnameChange = e => {
+        setSurnameInputValue(e.target.value)
+    }
+
 
     const onColorChange = e => {
-        fieldColor = e.target.value;
+        setColorValue(e.target.value)
     }
-    
-    
 
-    return(
+    return (
         <div className="div-color">
-        <form className='form-color'>
-            <label htmlFor="name">Name:</label>
-                <input type='text' id="name" onChange={ onChange } value={ displayName }/><br/>
-            <label htmlFor="color">Color:</label>
-                <select color={ displayColor } onChange={ onColorChange } value={ displayColor }>
+            <form className='form-color'>
+                <label htmlFor="name">Name:</label>
+                <input type='text' id="name" onChange={ onChange } value={ nameInputValue } placeholder="imie" /><br />
+                <label htmlFor="name">Surname:</label>
+                <input type='text' id="sname" onChange={ onSurnameChange } value={ surnameInputValue } placeholder="nazwisko" /><br />
+                <label htmlFor="color">Color:</label>
+                <select onChange={ onColorChange }>
                     <option value="Black" id="black">czarny</option>
                     <option value="Red" id="red">czerwony</option>
                     <option value="White" id="white">biały</option>
-                </select><br/>
-                <button type="button" onClick={ () => displayColor(fieldName)}>Wyślij</button>
-            
-        </form>
-        <div className="display"><h4>WYNIK</h4>{displayName} wybrał/a kolor {fieldColor}</div>
+                </select><br />
+                <button type="button" onClick={ () => {
+                    setDisplayName(nameInputValue);
+                    setDisplaySurname(surnameInputValue);
+                    setDisplayColor(colorValue);
+                } }>Wyślij</button>
+
+            </form>
+            <div className="display"><h4>WYNIK</h4>{ displayName } {displaySurname} wybrał/a kolor { displayColor }</div>
 
         </div>
     )
-    
-    
+
+
 }
 export default Color
-
 // form z 2 polami, przycisk na samym dole => wypisuje w div(unten) input(imie) wybrała ... input(kolor); nowa app od zera!
