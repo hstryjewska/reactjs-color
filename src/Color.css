@@ -1,45 +1,68 @@
 .div-color {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     height: 100%;
     width: 100%;
-    left: 20;
+    cursor: pointer;
+}
+
+.display-left {
+    height: 100%;
+    max-height: 50rem;
+    width: 100%;
+    max-width: 50rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-  }
-  
-  button {
-      position: absolute;
-    margin-top: 10px;
+}
+
+button {
+    margin-top: 2rem;
+    margin-right: 3rem;
     background-color: #282c34;
     color: white;
-    height: 6rem;
-    width: 10rem;
+    height: 15%;
+    width: 50%;
     font-weight: 600;
     font-size: calc(10px + 4vmin);
     border-radius: 1rem;
-  }
-  
-  button:hover {
-    transform: scale(0.8);
+}
+
+.selectColorBtn {
+    margin-right: 3rem;
+    color: #282c34;
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+}
+
+.icon {
+    margin-right: 1rem;
+} 
+
+button:hover {
+    transform: scale(0.9);
     color: #282c34;
     font-weight: 800;
     border: none;
     background-color: orange;
-  }
-  
-  label {
+}
+
+label {
     color: #282c34;
     font-weight: 600;
     font-size: calc(10px + 4vmin);
     font-weight: 900;
     width: 100%;
-  }
-  
-  input {
+}
+
+input {
     margin-top: 10px;
-    height: 4rem;
-    width: 12rem;
+    height: 7%;
+    width: 15%;
     padding: 1rem;
     font-size: calc(10px + 4vmin);
     font-weight: 400;
@@ -47,13 +70,13 @@
     border-color: #282c34;
     width: 100%;
     border-radius: 1rem;
-  }
-  
-  input:hover {
+}
+
+input:hover {
     background: orange;
-  }
-  
-  select {
+}
+
+select {
     color: #282c34;
     font-weight: 400;
     margin-left: 1rem;
@@ -64,97 +87,120 @@
     border: 5px solid;
     border-color: #282c34;
     border-radius: 1rem;
-  }
-  
-  select:hover {
+}
+
+select:hover {
     background: orange;
-  }
-  
-  #black {
+}
+
+#black {
     color: #fff;
     background: black;
     border-radius: 1rem;
-  }
-  
-  #red {
+}
+
+#red {
     color: #fff;
     background-color: red;
-  }
-  
-  #white {
+}
+
+#white {
     background-color: white;
-  }
-  
-  select:focus > #black:checked {
+}
+
+select:focus>#black:checked {
     color: #fff;
     background: #000 !important;
-  }
-  
-  select:focus > #red:checked {
+}
+
+select:focus>#red:checked {
     color: #fff;
     background: red !important;
-  }
-  
-  select:focus > #white:checked {
+}
+
+select:focus>#white:checked {
     background: white !important;
-  }
-  
-  .display {
-    margin-top: 10%;
-    margin-left: 5%;
-    height: 100%;
-    width: 50rem;
+}
+
+.display-right {
+    margin: 3rem;
+    padding: 0.5rem;
+    height: 70%;
+    width: 60%;
     border-radius: 1rem;
-    font-size: calc(10px + 4vmin);
+    font-size: calc(10px + 3vmin);
     font-weight: 400;
     color: #fff;
     background-color: #282c34;
-  }
-  
-  @media all and (max-width: 720px) {
+}
+
+@media all and (max-width: 720px) {
     .div-color {
-      position: relative;
-      height: max-content;
-      width: auto;
-      left: 20;
-      align-items: center;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        
     }
-  
+    .display-left {
+        height: 100%;
+        max-height: 40rem;
+        width: 100%;
+        max-width: 40rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+   
     button {
-      margin-top: 10px;
-      background-color: #282c34;
-      color: white;
-      height: 5%;
-      width: auto;
-      font-weight: 500;
-      font-size: calc(10px + 4vmin);
+        margin-top: 10px;
+        background-color: #282c34;
+        color: white;
+        height: 20%;
+        width: 40%;
+        font-weight: 500;
+        font-size: calc(10px + 2vmin);
     }
-  
+
     button:hover {
-      background-color: #171718;
+        transform: scale(0.9);
+        color: #282c34;
+        font-weight: 800;
+        border: none;
+        background-color: orange;
     }
-  
+
     label {
-      color: #282c34;
-      font-weight: 600;
-      font-size: 100%;
+        color: #282c34;
+        font-weight: 600;
+        font-size: 100%;
+        margin-right: 0.5rem;
+        float: left;
     }
-  
+ 
     input {
-      color: #282c34;
-      margin-top: 10px;
-      height: max-content;
-      width: max-content;
-      font-size: 100%;
-      font-weight: 600;
+        color: #282c34;
+        margin-top: 10px;
+        height: max-content;
+        width: max-content;
+        font-size: 100%;
+        font-weight: 600;
     }
-  
+
     select {
-      color: #282c34;
-      font-weight: 300;
-      font-size: 100%;
-      margin-top: 10px;
-      height: max-content;
-      width: max-content;
+        color: #282c34;
+        font-weight: 300;
+        font-size: 100%;
+        margin-top: 10px;
+        height: max-content;
+        width: max-content;
     }
-  }
+
+    .display-right {
+        height: 50%;
+        width: 50%;
+        margin-left: 18%;
+        font-size: 100%;
+    }
+
+}

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Color from './Color';
 import './Color.css';
